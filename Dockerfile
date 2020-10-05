@@ -8,7 +8,7 @@ RUN apt -y update \
 RUN apt install -y \
   git \
   g++ \
-  clang \
+  libclang-dev \
   cmake \
   python \
   gperf \
@@ -31,4 +31,4 @@ RUN cd / \
     && git clone --branch=5.13 git://code.qt.io/qt/qt5.git \
     && cd qt5 \
     && ./init-repository \
-    && ./configure -xplatform wasm-emscripten -nomake examples -nomake tests
+    && ./configure -xplatform wasm-emscripten -nomake examples -nomake tests -opensource --confirm-license
