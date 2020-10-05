@@ -26,7 +26,7 @@ RUN cd / \
     && cd emsdk \
     && ./emsdk install 1.39.8-64bit \
     && ./emsdk activate 1.39.8-64bit \
-    && source "/emsdk/emsdk_env.sh" >> $HOME/.bash_profile \
+    && . "/emsdk/emsdk_env.sh" >> $HOME/.bash_profile \
     && cd / \
     && git clone --branch=5.13 git://code.qt.io/qt/qt5.git \
     && cd qt5 \
