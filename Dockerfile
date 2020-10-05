@@ -31,4 +31,6 @@ RUN cd / \
     && git clone --branch=5.13 git://code.qt.io/qt/qt5.git \
     && cd qt5 \
     && ./init-repository \
-    && ./configure -xplatform wasm-emscripten -nomake examples -nomake tests -opensource --confirm-license
+    && ./configure -xplatform wasm-emscripten -nomake examples -nomake tests -opensource --confirm-license \
+    && make \
+    && make install
