@@ -19,14 +19,14 @@ RUN apt install -y \
 RUN cd / \
     && git clone https://github.com/emscripten-core/emsdk.git \
     && cd emsdk \
-    && ./emsdk install 1.38.30-64bit \
-    && ./emsdk activate 1.38.30-64bit \
+    && ./emsdk install 1.39.8-64bit \
+    && ./emsdk activate 1.39.8-64bit \
     && . "/emsdk/emsdk_env.sh" >> $HOME/.bash_profile
 
 #Qt 5 layer
 RUN . "/emsdk/emsdk_env.sh" >> $HOME/.bash_profile \
     && cd / \
-    && git clone --branch=5.13 git://code.qt.io/qt/qt5.git \
+    && git clone --branch=5.15 git://code.qt.io/qt/qt5.git \
     && cd qt5 \
     && ./init-repository \
     && ./configure -xplatform wasm-emscripten -nomake examples -nomake tests -opensource --confirm-license \
