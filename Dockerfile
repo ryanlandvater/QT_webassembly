@@ -24,7 +24,7 @@ RUN cd / \
     && . "/emsdk/emsdk_env.sh" >> $HOME/.bash_profile
 
 #Qt 5 layer
-RUN . "/emsdk/emsdk_env.sh" >> $HOME/.bash_profile \
+RUN . "/emsdk/emsdk_env.sh" \
     && cd / \
     && git clone --branch=5.15 git://code.qt.io/qt/qt5.git \
     && cd qt5 \
