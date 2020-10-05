@@ -32,5 +32,5 @@ RUN cd / \
     && cd qt5 \
     && ./init-repository \
     && ./configure -xplatform wasm-emscripten -nomake examples -nomake tests -opensource --confirm-license \
-    && make \
-    && make install
+    #&& make \
+    #&& make install
