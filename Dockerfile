@@ -31,4 +31,4 @@ RUN cd /emsdk \
     && cd qt5 \
     && ./init-repository \
     && ./configure -xplatform wasm-emscripten -nomake examples -nomake tests -opensource --confirm-license \
-    && make module-qtbase module-qtdeclarative module-qtquick module-qtquickcontrols module-qtquicklayouts install\
+    #&& make module-qtbase module-qtdeclarative module-qtquick module-qtquickcontrols module-qtquicklayouts install\
