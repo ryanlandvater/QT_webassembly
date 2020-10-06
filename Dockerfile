@@ -24,9 +24,11 @@ RUN cd / \
     && . "/emsdk/emsdk_env.sh" >> $HOME/.bash_profile
 
 #Qt 5 layer
-RUN . "/emsdk/emsdk_env.sh" \
+RUN cd /emsdk \
+    && . "/emsdk/emsdk_env.sh" >> $HOME/.bash_profile \
     && cd / \
     && git clone --branch=5.15 git://code.qt.io/qt/qt5.git \
     && cd qt5 \
     && ./init-repository \
     && ./configure -xplatform wasm-emscripten -nomake examples -nomake tests -opensource --confirm-license \
+    && make module-qtbase module-qtdeclarative module-qtquick module-qtquickcontrols module-qtquicklayouts install\
